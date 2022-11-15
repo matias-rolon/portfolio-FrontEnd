@@ -1,0 +1,131 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+.banner-img{
+    width: 100%;
+    height: 550px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+section{
+    border: 1px solid cyan;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 5px;
+
+}
+
+.logos{
+    width: 70px;
+    height: 70px;
+    display: inline;
+}
+
+h5{
+    display: inline;
+}
+
+h6{
+    display: inline;
+    color: #808080;
+}
+
+article{
+    margin: 10px;
+}
+
+.foto{
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    margin-top: -80px;
+    margin-left: 30px;
+}
+
+.banner{
+    margin: 0px 5px 10px 5px;
+    padding: 0px;
+    border-radius: 30px;
+}
+
+.redes{
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+}
+
+.arg{
+    width: 270px;
+    height: 50px;
+}
+
+
+
+
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .single-chart {
+    width: 15%;
+    justify-content: space-around ;
+  }
+  
+  .circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+  
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  .circular-chart.html .circle {
+    stroke: #F16529;
+  }
+  
+  .circular-chart.css .circle {
+    stroke: #2465F1;
+  }
+  
+  .circular-chart.JS .circle {
+    stroke: #F7DF1E;
+  }
+
+  .circular-chart.React .circle {
+    stroke: #5FD8F9;
+  }
+  
+  .circular-chart.C .circle {
+    stroke: #803788;
+  }
+
+  .circular-chart.C2 .circle {
+    stroke: #00589D;
+  }
+  .percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }
