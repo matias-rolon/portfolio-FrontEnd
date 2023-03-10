@@ -1,0 +1,28 @@
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (min-width: 570px){
+    .contenedor{
+        padding: 40px;
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-top: 70px;
+    }
+}
+@media (max-width: 570px) {
+
+    .h-custom {
+    height: 100%;
+    }
+    
+
+}
+
