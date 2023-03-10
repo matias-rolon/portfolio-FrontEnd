@@ -9,6 +9,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { TrabajoComponent } from './components/experiencia/trabajo/trabajo.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { FormacionComponent } from './components/educacion/formacion/formacion.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TrabajoComponent } from './components/experiencia/trabajo/trabajo.compo
     PortfolioComponent,
     SobreMiComponent,
     ExperienciaComponent,
-    TrabajoComponent
+    TrabajoComponent,
+    EducacionComponent,
+    FormacionComponent
   ],
   imports: [
     BrowserModule,
