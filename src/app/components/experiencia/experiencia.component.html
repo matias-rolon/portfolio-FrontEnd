@@ -1,11 +1,13 @@
 <section>
     <article>
         <h2>Experiencia Laboral</h2>
-        <app-trabajo 
-        titulo="Primer Trabajo" 
-        fecha="2017 - 2022"
-        descripcion="Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut assumenda laudantium amet accusamus 
-        rem officia voluptate minus distinctio non doloremque consequatur unde dolorem pariatur, similique dicta reiciendis 
-        vero voluptatem?"></app-trabajo>
+        <div *ngFor="let experiencia of experiencias">
+            <app-trabajo
+            img="{{experiencia.imagenExp}}"
+            titulo="{{experiencia.tituloExp}}"
+            fechaInicio="{{experiencia.fechaInicioExp}}"
+            fechaFin="{{experiencia.fechaFinExp}}"
+            descripcion="{{experiencia.descExp}}"></app-trabajo>
+        </div>
     </article>
 </section>

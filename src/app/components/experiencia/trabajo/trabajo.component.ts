@@ -14,7 +14,8 @@ export class TrabajoComponent implements OnInit {
   
   @Input() img:string = "";
   @Input() titulo:string = "";
-  @Input() fecha:string ="";
+  @Input() fechaInicio:string ="";
+  @Input() fechaFin:string ="";
   @Input() descripcion:string="";
 
 }
