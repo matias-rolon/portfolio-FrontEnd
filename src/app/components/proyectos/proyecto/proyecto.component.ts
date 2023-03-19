@@ -13,9 +13,10 @@ export class ProyectoComponent implements OnInit {
   }
 
   @Input() imagen:string = "";
-  @Input() link:string = "";
+  @Input() url:string = "";
   @Input() titulo:string = "";
-  @Input() fecha:string ="";
+  @Input() fechaInicio:string ="";
+  @Input() fechaFin:string ="";
   @Input() descripcion:string="";
 
 }
