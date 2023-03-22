@@ -13,12 +13,14 @@ import { TrabajoComponent } from './components/experiencia/trabajo/trabajo.compo
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { FormacionComponent } from './components/educacion/formacion/formacion.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { CircleComponent } from './components/skills/circle/circle.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectoComponent } from './components/proyectos/proyecto/proyecto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -32,17 +34,17 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     FormacionComponent,
     SkillsComponent,
-    CircleComponent,
     ProyectosComponent,
     ProyectoComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

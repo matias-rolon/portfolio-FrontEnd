@@ -1,6 +1,11 @@
 <section>
     <article>
       <h2>Hard & Soft kills:</h2>
-      <app-circle></app-circle>
+      <div *ngFor="let skill of skills">      
+        <div class="skill-name">{{skill.nombreSkill}}</div>
+          <div class="skill-bar">
+            <div class="skill-per"  style="max-width: {{skill.porcentaje}}%"></div>
+          </div> 
+      </div>
     </article>
   </section>
