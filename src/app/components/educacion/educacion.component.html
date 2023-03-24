@@ -2,7 +2,7 @@
   <article>
     <h2>Educación:</h2>
     <div>
-      <button (click)="onOpenModal('add')" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEducacionModal" data-bs-whatever="@getbootstrap">Añadir educacion</button>
+      <button (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addEducacionModal" data-bs-whatever="@getbootstrap">Añadir educacion</button>
     </div>
     <div *ngFor="let educacion of educaciones">
       <div class="col text-center">
@@ -51,7 +51,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" id="add-educacion-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Send message</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="onAddEducacion(addForm)">Send message</button>
           </div>
         </div>
       </div>
@@ -114,6 +114,14 @@
             <button (click)="onDeleteEducacion(deleteEducacion!.idEdu)" type="button" class="btn btn-danger">Si</button>
           </div>
         </div>
+      </div>
+    </div>
+    
+    <!-- Notificacion de que no hay educaciones -->
+    <div *ngIf="educaciones?.length == 0">
+      <div class="alert alert-info" role="alert">
+        <h1 class="alert-heading">No hay educaciones</h1>
+        <p>Agregue sus educaciones haciendo click en el boton "Añadir educacion".</p>
       </div>
     </div>
   </article>
