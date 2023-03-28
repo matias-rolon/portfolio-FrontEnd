@@ -3,4 +3,5 @@ export interface Skills{
     nombreSkill:string;
     fotoSkill:string;
     porcentaje:number;
+    colorSkill:string;
 }
