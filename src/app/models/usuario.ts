@@ -5,4 +5,6 @@ export interface Usuario{
     titulo:string;
     descripcion:string;
     fotoPerfil:string;
+    password:string;
+    email:string;
 }
