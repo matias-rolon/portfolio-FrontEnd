@@ -6,5 +6,4 @@ export interface Usuario{
     descripcion:string;
     fotoPerfil:string;
     password:string;
-    email:string;
 }
