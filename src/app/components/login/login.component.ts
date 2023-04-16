@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   constructor(private user : LoginUserService, private router:Router, private fb: FormBuilder ) { }
 
   ngOnInit(): void {
+    this.valido = false;
     this.getUser();    
   }
 
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.formSubmit = true;
     if(this.usuario?.email==this.loginForm.value.email && this.usuario?.password == this.loginForm.value.password){
+      this.user.valido = true;
       this.router.navigate(['/portfolio']);
     }
     else if(this.valido){

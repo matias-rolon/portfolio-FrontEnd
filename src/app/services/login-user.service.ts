@@ -8,6 +8,7 @@ import { loginUser } from '../models/loginUser';
   providedIn: 'root'
 })
 export class LoginUserService {
+  valido = false;
   private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
