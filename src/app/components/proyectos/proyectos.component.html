@@ -2,10 +2,10 @@
     <article>
     <h2>Proyectos realizados:</h2>
     <div>
-        <button (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addProyectoModal" data-bs-whatever="@getbootstrap">Añadir proyecto</button>
+        <button *ngIf="valido" (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addProyectoModal" data-bs-whatever="@getbootstrap">Añadir proyecto</button>
     </div>
     <div *ngFor="let proyecto of proyectos">
-        <div class="col text-center">
+        <div *ngIf="valido" class="col text-center">
             <a (click)="onOpenModal('edit', proyecto)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editProyectoModal" data-bs-toggle="modal">
               <i class="fa fa-pencil"></i>
             </a>

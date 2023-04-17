@@ -3,7 +3,7 @@
       <div>
         <img src="{{usuario.fotoPerfil}}" alt="" class="img-fluid" id="foto">
       </div>
-      <div class="col">
+      <div class="col" *ngIf="valido">
         <a (click)="onOpenModal('edit', usuario)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editUsuarioModal" data-bs-toggle="modal">
           <i class="fa fa-pencil"></i>
         </a>

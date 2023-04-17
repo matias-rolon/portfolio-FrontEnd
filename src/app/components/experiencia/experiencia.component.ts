@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Experiencia } from 'src/app/models/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { LoginUserService } from 'src/app/services/login-user.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -15,11 +16,13 @@ export class ExperienciaComponent implements OnInit {
   public experiencias:Experiencia[]=[];
   public editExperiencia:Experiencia | undefined;
   public deleteExperiencia:Experiencia | undefined;
+  valido:boolean | undefined;
 
-  constructor(private experienciaService:ExperienciaService) { }
+  constructor(private experienciaService:ExperienciaService, private loginUser:LoginUserService) { }
 
   ngOnInit(): void {
     this.getExperiencia();
+    this.valido = this.loginUser.valido;
   }
 
   public getExperiencia():void{

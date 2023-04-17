@@ -2,10 +2,10 @@
   <article>
     <h2>Educación:</h2>
     <div>
-      <button (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addEducacionModal" data-bs-whatever="@getbootstrap">Añadir educacion</button>
+      <button *ngIf="valido" (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addEducacionModal" data-bs-whatever="@getbootstrap">Añadir educacion</button>
     </div>
     <div *ngFor="let educacion of educaciones">
-      <div class="col text-center">
+      <div *ngIf="valido" class="col text-center">
         <a (click)="onOpenModal('edit', educacion)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editEducacionModal" data-bs-toggle="modal">
           <i class="fa fa-pencil"></i>
         </a>

@@ -2,10 +2,10 @@
     <article>
         <h2>Experiencia Laboral</h2>
         <div>
-            <button (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addExperienciaModal" data-bs-whatever="@getbootstrap">Añadir experiencia</button>
+            <button *ngIf="valido" (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addExperienciaModal" data-bs-whatever="@getbootstrap">Añadir experiencia</button>
           </div>
         <div *ngFor="let experiencia of experiencias">
-            <div class="col text-center">
+            <div *ngIf="valido" class="col text-center">
                 <a (click)="onOpenModal('edit', experiencia)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editExperienciaModal" data-bs-toggle="modal">
                   <i class="fa fa-pencil"></i>
                 </a>

@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Skills } from 'src/app/models/skills';
+import { LoginUserService } from 'src/app/services/login-user.service';
 import { SkillsService } from 'src/app/services/skills.service';
 
 @Component({
@@ -10,15 +11,16 @@ import { SkillsService } from 'src/app/services/skills.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-
+  valido:boolean | undefined;
   public skills:Skills[]=[];
   public editSkill:Skills | undefined;
   public deleteSkill:Skills | undefined;
 
-  constructor(private skillService:SkillsService) { }
+  constructor(private skillService:SkillsService, private loginUser:LoginUserService) { }
 
   ngOnInit(): void {
     this.getSkill();
+    this.valido = this.loginUser.valido;
   }
 
   public getSkill():void{

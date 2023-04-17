@@ -21,7 +21,8 @@
       <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=matiasrolon1301@gmail.com" target="_blank"><img src="../assets/images/logos/gmail.png" class="redes"/></a>
       <a href="https://github.com/matias-rolon" target="_blank"><img src="../../../assets/images/logos/github.png" alt="" class="redes"></a>
       <br>
-      <button class="btn btn-outline-success" type="submit" (click)="login()" >Login</button>
+      <button *ngIf="valido" class="btn btn-outline-success" type="submit" (click)="logout()" >Logout</button>
+      <button *ngIf="!valido" class="btn btn-outline-success" type="submit" (click)="login()" >Login</button>
     </div>
   </div>
   

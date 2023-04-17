@@ -3,6 +3,7 @@ import { Component, OnInit,} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { LoginUserService } from 'src/app/services/login-user.service';
 
 @Component({
   selector: 'app-educacion',
@@ -10,15 +11,16 @@ import { EducacionService } from 'src/app/services/educacion.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-
+  valido: boolean | undefined;
   public educaciones:Educacion[]=[];
   public editEducacion:Educacion | undefined;
   public deleteEducacion:Educacion | undefined;
 
-  constructor(private educacionService:EducacionService) { }
+  constructor(private educacionService:EducacionService, private loginUser: LoginUserService) { }
 
   ngOnInit(): void {
     this.getEducacion();
+    this.valido = this.loginUser.valido;
   }
   
   public getEducacion():void{

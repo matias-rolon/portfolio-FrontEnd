@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { LoginUserService } from 'src/app/services/login-user.service';
 import { SobreMiService } from 'src/app/services/sobre-mi.service';
 
 @Component({
@@ -9,14 +10,15 @@ import { SobreMiService } from 'src/app/services/sobre-mi.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
-
+  valido: boolean | undefined;
   public usuario:Usuario | undefined;
   public editUsuario:Usuario | undefined;
 
-  constructor(private sobreMi : SobreMiService) { }
+  constructor(private sobreMi : SobreMiService, private loginUser:LoginUserService) { }
 
   ngOnInit(): void {
-    this.getUser();    
+    this.getUser();
+    this.valido = this.loginUser.valido;
   }
 
   public getUser():void{

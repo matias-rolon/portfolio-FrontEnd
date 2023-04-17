@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Proyecto } from 'src/app/models/proyecto';
+import { LoginUserService } from 'src/app/services/login-user.service';
 import { ProyectoService } from 'src/app/services/proyecto.service';
 
 @Component({
@@ -10,15 +11,16 @@ import { ProyectoService } from 'src/app/services/proyecto.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-
+  valido:boolean | undefined;
   public proyectos:Proyecto[]=[];
   public editProyecto:Proyecto | undefined;
   public deleteProyecto:Proyecto | undefined;
 
-  constructor(private proyectoService:ProyectoService) { }
+  constructor(private proyectoService:ProyectoService, private loginUser:LoginUserService) { }
 
   ngOnInit(): void {
     this.getProyecto();
+    this.valido = this.loginUser.valido;
   }
 
   public getProyecto():void{
