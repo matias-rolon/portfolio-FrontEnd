@@ -13,7 +13,7 @@ export class SobreMiService {
   constructor(private http: HttpClient) { }
 
   public getUser():Observable<Usuario>{
-    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/3`);
+    return this.http.get<Usuario>(`${this.apiServerUrl}/usuario/id/1`);
   }
 
   public updateUsuario(usuario:Usuario):Observable<Usuario>{

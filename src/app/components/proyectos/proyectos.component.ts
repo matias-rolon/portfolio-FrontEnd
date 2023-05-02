@@ -54,6 +54,17 @@ export class ProyectosComponent implements OnInit {
     button.click();
   }
 
+  closeModal(): void {
+    const modal = document.getElementById("deleteProyectoModal");
+    if (modal) {
+      modal.classList.remove("show");
+      modal.style.display = "none";
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+  }
+  
+
   public onAddProyecto(addForm:NgForm){
     document.getElementById('add-proyecto-form')?.click();
     this.proyectoService.addProyecto(addForm.value).subscribe({
