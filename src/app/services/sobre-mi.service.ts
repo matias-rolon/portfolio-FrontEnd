@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SobreMiService {
-  private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = "https://back-endap-4k2c.onrender.com";
 
   constructor(private http: HttpClient) { }
 

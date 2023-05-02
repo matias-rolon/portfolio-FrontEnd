@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { Experiencia } from "../models/experiencia";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExperienciaService {
-  private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = "https://back-endap-4k2c.onrender.com";
 
   constructor(private http:HttpClient) { }
 
