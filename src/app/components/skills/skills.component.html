@@ -124,10 +124,15 @@
     </div>
     
     <!-- Notificacion de que no hay educaciones -->
-    <div *ngIf="skills?.length == 0">
+    <div *ngIf="skills?.length == 0 && valido">
       <div class="alert alert-info" role="alert">
         <h1 class="alert-heading">No hay skills</h1>
         <p>Agregue sus skills haciendo click en el boton "Añadir skill".</p>
+      </div>
+    </div>
+    <div *ngIf="skills?.length == 0 && !valido">
+      <div class="alert alert-info" role="alert">
+        <h1 class="alert-heading">No hay skills</h1>
       </div>
     </div>
 

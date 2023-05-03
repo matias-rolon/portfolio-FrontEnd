@@ -1,134 +1,335 @@
 <section>
-    <article>
+  <article>
     <h2>Proyectos realizados:</h2>
     <div>
-        <button *ngIf="valido" (click)="onOpenModal('add')" type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addProyectoModal" data-bs-whatever="@getbootstrap">Añadir proyecto</button>
+      <button
+        *ngIf="valido"
+        (click)="onOpenModal('add')"
+        type="button"
+        class="btn btn-success mb-2"
+        data-bs-toggle="modal"
+        data-bs-target="#addProyectoModal"
+        data-bs-whatever="@getbootstrap"
+      >
+        Añadir proyecto
+      </button>
     </div>
     <div *ngFor="let proyecto of proyectos">
-        <div *ngIf="valido" class="col text-center">
-            <a (click)="onOpenModal('edit', proyecto)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editProyectoModal" data-bs-toggle="modal">
-              <i class="fa fa-pencil"></i>
-            </a>
-            <a (click)="onOpenModal('delete', proyecto)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deleteProyectoModal" data-bs-toggle="modal">
-              <i class="fa fa-times"></i>
-            </a>
-          </div>
-        <app-proyecto 
-            titulo="{{proyecto.tituloPro}}"
-            fechaInicio="{{proyecto.fechaInicioPro}}"
-            fechaFin="{{proyecto.fechaFinPro}}"
-            descripcion="{{proyecto.descPro}}"
-            url="{{proyecto.urlPro}}"
-            imagen="{{proyecto.imagenPro}}">
-         </app-proyecto>
+      <div *ngIf="valido" class="col text-center">
+        <a
+          (click)="onOpenModal('edit', proyecto)"
+          class="btn btn-primary tooltips"
+          data-placement="top"
+          data-toogle="tooltip"
+          data-original-title="Edit"
+          data-bs-target="#editProyectoModal"
+          data-bs-toggle="modal"
+        >
+          <i class="fa fa-pencil"></i>
+        </a>
+        <a
+          (click)="onOpenModal('delete', proyecto)"
+          class="btn btn-secondary tooltips"
+          data-placement="top"
+          data-toogle="tooltip"
+          data-original-title="Delete"
+          data-bs-target="#deleteProyectoModal"
+          data-bs-toggle="modal"
+        >
+          <i class="fa fa-times"></i>
+        </a>
+      </div>
+      <app-proyecto
+        titulo="{{ proyecto.tituloPro }}"
+        fechaInicio="{{ proyecto.fechaInicioPro }}"
+        fechaFin="{{ proyecto.fechaFinPro }}"
+        descripcion="{{ proyecto.descPro }}"
+        url="{{ proyecto.urlPro }}"
+        imagen="{{ proyecto.imagenPro }}"
+      >
+      </app-proyecto>
     </div>
 
     <!-- Modal añadir proyecto -->
-    <div class="modal fade" id="addProyectoModal" tabindex="-1" aria-labelledby="addProyectoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addProyectoModalLabel">Añadir proyecto</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form #addForm="ngForm" (ngSubmit)="onAddProyecto(addForm)">
-                <div class="form-group">
-                      <label for="tituloPro"> Titulo</label>
-                      <input type="text" ngModel name="tituloPro" class="form-control" id="tituloPro" placeholder="Titulo" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="fechaInicioPro"> Fecha Inicio</label>
-                      <input type="text" ngModel name="fechaInicioPro" class="form-control" id="fechaInicioPro" placeholder="Fecha inicio" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="fechaFinPro"> Fecha fin</label>
-                      <input type="text" ngModel name="fechaFinPro" class="form-control" id="fechaFinPro" placeholder="Fecha Fin" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="descPro"> Descripcion </label>
-                      <input type="text" ngModel name="descPro" class="form-control" id="descPro" placeholder="descripcion" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="imagenPro"> imagen</label>
-                      <input type="text" ngModel name="imagenPro" class="form-control" id="imagenPro" placeholder="Imagen" required/>
-                    </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="add-proyecto-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="onAddProyecto(addForm)">Send message</button>
-            </div>
+    <div
+      class="modal fade"
+      id="addProyectoModal"
+      tabindex="-1"
+      aria-labelledby="addProyectoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addProyectoModalLabel">
+              Añadir proyecto
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddProyecto(addForm)">
+              <div class="form-group">
+                <label for="tituloPro"> Titulo</label>
+                <input
+                  type="text"
+                  ngModel
+                  name="tituloPro"
+                  class="form-control"
+                  id="tituloPro"
+                  placeholder="Titulo"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="fechaInicioPro"> Fecha Inicio</label>
+                <input
+                  type="text"
+                  ngModel
+                  name="fechaInicioPro"
+                  class="form-control"
+                  id="fechaInicioPro"
+                  placeholder="Fecha inicio"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="fechaFinPro"> Fecha fin</label>
+                <input
+                  type="text"
+                  ngModel
+                  name="fechaFinPro"
+                  class="form-control"
+                  id="fechaFinPro"
+                  placeholder="Fecha Fin"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="descPro"> Descripcion </label>
+                <input
+                  type="text"
+                  ngModel
+                  name="descPro"
+                  class="form-control"
+                  id="descPro"
+                  placeholder="descripcion"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="imagenPro"> imagen</label>
+                <input
+                  type="text"
+                  ngModel
+                  name="imagenPro"
+                  class="form-control"
+                  id="imagenPro"
+                  placeholder="Imagen"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="add-proyecto-form"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              [disabled]="addForm.invalid"
+              type="submit"
+              class="btn btn-primary"
+              (click)="onAddProyecto(addForm)"
+            >
+              Send message
+            </button>
           </div>
         </div>
+      </div>
     </div>
 
     <!-- Modal editar proyecto -->
-    <div class="modal fade" id="editProyectoModal" tabindex="-1" aria-labelledby="editProyectoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="editProyectoModalLabel">Editar proyecto</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form #editForm="ngForm">
-                <div class="form-group">
-                      <label for="tituloPro"> Titulo</label>
-                      <input type="text" ngModel="{{editProyecto?.tituloPro}}" name="tituloPro" class="form-control" id="tituloPro" placeholder="Titulo" required/>
-                    </div>
-                    <input type="hidden" ngModel="{{editProyecto?.idPro}}" name="idPro" class="form-control" id="idPro" placeholder=""/>
-                    <div class="form-group">
-                      <label for="fechaInicioPro"> Fecha Inicio</label>
-                      <input type="text" ngModel="{{editProyecto?.fechaInicioPro}}" name="fechaInicioPro" class="form-control" id="fechaInicioPro" placeholder="Fecha inicio" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="fechaFinPro"> Fecha fin</label>
-                      <input type="text" ngModel="{{editProyecto?.fechaFinPro}}" name="fechaFinPro" class="form-control" id="fechaFinPro" placeholder="Fecha Fin" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="descPro"> Descripcion </label>
-                      <input type="text" ngModel="{{editProyecto?.descPro}}" name="descPro" class="form-control" id="descPro" placeholder="descripcion" required/>
-                    </div>
-                    <div class="form-group">
-                      <label for="imagenPro"> imagen</label>
-                      <input type="text" ngModel="{{editProyecto?.imagenPro}}" name="imagenPro" class="form-control" id="imagenPro" placeholder="Imagen" required/>
-                    </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="update-proyecto-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button (click)="onUpdateProyecto(editForm.value)" type="submit" class="btn btn-primary">Send message</button>
-            </div>
+    <div
+      class="modal fade"
+      id="editProyectoModal"
+      tabindex="-1"
+      aria-labelledby="editProyectoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editProyectoModalLabel">
+              Editar proyecto
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form #editForm="ngForm">
+              <div class="form-group">
+                <label for="tituloPro"> Titulo</label>
+                <input
+                  type="text"
+                  ngModel="{{ editProyecto?.tituloPro }}"
+                  name="tituloPro"
+                  class="form-control"
+                  id="tituloPro"
+                  placeholder="Titulo"
+                  required
+                />
+              </div>
+              <input
+                type="hidden"
+                ngModel="{{ editProyecto?.idPro }}"
+                name="idPro"
+                class="form-control"
+                id="idPro"
+                placeholder=""
+              />
+              <div class="form-group">
+                <label for="fechaInicioPro"> Fecha Inicio</label>
+                <input
+                  type="text"
+                  ngModel="{{ editProyecto?.fechaInicioPro }}"
+                  name="fechaInicioPro"
+                  class="form-control"
+                  id="fechaInicioPro"
+                  placeholder="Fecha inicio"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="fechaFinPro"> Fecha fin</label>
+                <input
+                  type="text"
+                  ngModel="{{ editProyecto?.fechaFinPro }}"
+                  name="fechaFinPro"
+                  class="form-control"
+                  id="fechaFinPro"
+                  placeholder="Fecha Fin"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="descPro"> Descripcion </label>
+                <input
+                  type="text"
+                  ngModel="{{ editProyecto?.descPro }}"
+                  name="descPro"
+                  class="form-control"
+                  id="descPro"
+                  placeholder="descripcion"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="imagenPro"> imagen</label>
+                <input
+                  type="text"
+                  ngModel="{{ editProyecto?.imagenPro }}"
+                  name="imagenPro"
+                  class="form-control"
+                  id="imagenPro"
+                  placeholder="Imagen"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="update-proyecto-form"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              (click)="onUpdateProyecto(editForm.value)"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Send message
+            </button>
           </div>
         </div>
+      </div>
     </div>
 
     <!-- Modal eliminar proyecto -->
-    <div tabindex="-1" data-bs-toggle="modal" data-bs-target="#deleteModelLabel" class="modal fade" id="deleteProyectoModal" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="deleteModelLabel">Eliminar proyecto</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div
+      tabindex="-1"
+      data-bs-toggle="modal"
+      data-bs-target="#deleteModelLabel"
+      class="modal fade"
+      id="deleteProyectoModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteModelLabel">
+              Eliminar proyecto
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
-              Estas seguro que quieres eliminar la educacion {{deleteProyecto?.tituloPro}}?
+            Estas seguro que quieres eliminar la educacion
+            {{ deleteProyecto?.tituloPro }}?
           </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-              <button (click)="onDeleteProyecto(deleteProyecto!.idPro)" type="button" class="btn btn-danger">Si</button>
-            </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              (click)="onDeleteProyecto(deleteProyecto!.idPro)"
+              type="button"
+              class="btn btn-danger"
+            >
+              Si
+            </button>
           </div>
         </div>
       </div>
+    </div>
 
     <!-- Notificacion de que no hay educaciones -->
-    <div *ngIf="proyectos?.length == 0">
-        <div class="alert alert-info" role="alert">
-          <h1 class="alert-heading">No hay proyectos</h1>
-          <p>Agregue sus proyectos haciendo click en el boton "Añadir educacion".</p>
-        </div>
+    <div *ngIf="proyectos?.length == 0 && valido">
+      <div class="alert alert-info" role="alert">
+        <h1 class="alert-heading">No hay proyectos</h1>
+        <p>
+          Agregue sus proyectos haciendo click en el boton "Añadir proyecto".
+        </p>
       </div>
-    </article>
+    </div>
+    <div *ngIf="proyectos?.length == 0 && !valido">
+      <div class="alert alert-info" role="alert">
+        <h1 class="alert-heading">No hay proyectos</h1>
+      </div>
+    </div>
+  </article>
 </section>

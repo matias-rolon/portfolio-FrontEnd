@@ -118,10 +118,15 @@
     </div>
     
     <!-- Notificacion de que no hay educaciones -->
-    <div *ngIf="educaciones?.length == 0">
+    <div *ngIf="educaciones?.length == 0 && valido">
       <div class="alert alert-info" role="alert">
         <h1 class="alert-heading">No hay educaciones</h1>
         <p>Agregue sus educaciones haciendo click en el boton "Añadir educacion".</p>
+      </div>
+    </div>
+    <div *ngIf="educaciones?.length == 0 && !valido">
+      <div class="alert alert-info" role="alert">
+        <h1 class="alert-heading">No hay educaciones</h1>
       </div>
     </div>
   </article>
